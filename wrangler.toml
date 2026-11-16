@@ -1,8 +1,13 @@
-name = "planetary-max-worker"
-main = "src/index.ts"
-compatibility_date = "2026-03-01"
+name = "portal-os1"
+main = "apps/worker/src/index.ts"
+compatibility_date = "2026-04-01"
+account_id = "cfbebee3f0343be6fb2ed557bd4da8a1"
+
+[vars]
+ALLOWED_ORIGINS = "https://portal-os1.pages.dev,https://www.portal-os1.pages.dev"
 
 [[d1_databases]]
 binding = "DB"
-database_name = "planetary-max-ledger"
-database_id = "26f79d62-306d-4258-970d-b218cddabe8f"
+database_name = "portal-os1-production1-db"
+database_id = "73b4f0ee-5eb1-4ccd-9b50-1ec9ab39532b"
+migrations_dir = "apps/worker/d1/migrations"
