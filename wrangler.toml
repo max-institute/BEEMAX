@@ -1,39 +1,8 @@
-name = "beemax"
-main = "apps/worker/src/index.ts"
-compatibility_date = "2026-10-26"
-account_id = "cfbebee3f0343be6fb2ed557bd4da8a1"
-
-[vars]
-ENV = "production"
-ENVIRONMENT = "production"
-ALLOWED_ORIGINS = "http://localhost:5173,http://127.0.0.1:5173,https://portal-os1.pages.dev,https://portal-os1-969.pages.dev,https://max-games.pages.dev"
-ICVS_ENABLED = "true"
-MAX_PROCESS_HEAP_BYTES = 2097152 # 2MB Hard Cap
+name = "planetary-max-worker"
+main = "src/index.ts"
+compatibility_date = "2026-03-01"
 
 [[d1_databases]]
 binding = "DB"
-database_name = "portal-os1-production1-db"
-database_id = "73b4f0ee-5eb1-4ccd-9b50-1ec9ab39532b"
-migrations_dir = "apps/worker/d1/migrations"
-
-[durable_objects]
-bindings = [
-  { name = "MICROKERNEL_ACTOR", class_name = "MicrokernelProcessActor" },
-  { name = "FACTORY_ACTOR", class_name = "ProductFactoryActor" },
-  { name = "INSTANT_SPACE", class_name = "InstantSpaceDurableObject" }
-]
-
-[exports.MicrokernelProcessActor]
-type = "durable-object"
-storage = "sqlite"
-
-[exports.ProductFactoryActor]
-type = "durable-object"
-storage = "sqlite"
-
-[exports.InstantSpaceDurableObject]
-type = "durable-object"
-storage = "sqlite"
-
-[triggers]
-crons = ["* * * * *"]
+database_name = "planetary-max-ledger"
+database_id = "26f79d62-306d-4258-970d-b218cddabe8f"
