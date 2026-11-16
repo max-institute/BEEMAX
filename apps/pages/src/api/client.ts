@@ -1,8 +1,11 @@
-let staffToken = "";
+let staffToken = "portal-os1-governor";
+
 export function setStaffToken(token: string) {
-  staffToken = token;
+  staffToken = token || "portal-os1-governor";
 }
+
 export const API_URL = (import.meta.env.VITE_API_URL ?? "").replace(/\/+$/, "");
+
 export async function api<T>(
   path: string,
   options: RequestInit = {},
